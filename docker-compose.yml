@@ -17,6 +17,7 @@ services:
             - DATABASE_HOST=db
             - DATABASE_NAME=so-final
             - DATABASE_PORT=27017
+            - IS_DOCKERIZED=true
         networks:
             - app-network
         links:

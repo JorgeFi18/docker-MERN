@@ -2,11 +2,15 @@ const mongoose = require('mongoose');
 const {
     DATABASE_HOST,
     DATABASE_NAME,
-    DATABASE_PORT
+    DATABASE_PORT,
+    IS_DOCKERIZED
 } = process.env;
 
-//mongoose.connect(`mongodb://localhost:27017/so-final`, {
-mongoose.connect(`mongodb://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`, {
+const dbUrl = IS_DOCKERIZED ?
+    `mongodb://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}` :
+    'mongodb://localhost:27017/so-final';
+
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     connectTimeoutMS: 10000,
