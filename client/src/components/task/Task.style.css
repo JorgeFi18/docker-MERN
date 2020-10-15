@@ -1,0 +1,40 @@
+.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.task:hover {
+    transform: scale(1.01);
+}
+
+.task-info {
+    text-align: left;
+}
+
+.task-action {
+    display: flex;
+    align-items: center;
+}
+
+.check, .delete {
+    transition: all 0.3s;
+}
+
+.check:hover{
+    fill: green;
+}
+
+.delete:hover{
+    fill: red;
+}
+
+.completed-task {
+    text-decoration: line-through;
+    color: gray;
+}
